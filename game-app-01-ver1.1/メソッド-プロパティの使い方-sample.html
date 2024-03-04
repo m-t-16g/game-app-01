@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+
+<body>
+ <p class="paragraph"> 前後の余白をトリミングします </p>
+ <form id="form">
+  <select name="select_name" id="select">
+   <option value="1" class="option_class1">1</option>
+   <option value="2" class="option_class2">2</option>
+  </select>
+ </form>
+ <script>
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // メソッド 使い方 例
+  ////////////////////////////////////////////////////////////////////////////////
+
+  // pattern-1
+  // 書式：オブジェクト.メソッド;
+  // 意味：オブジェクトからメソッドを呼び出す
+  const paragraphElement = document.querySelector('.paragraph');
+  console.log(paragraphElement);
+
+
+  // pattern-2
+  // 書式：オブジェクト.メソッド1.メソッド2;
+  // 意味：オブジェクトのメソッド1を実行し、その結果に対してメソッド2を実行する
+  let word = '    cca students    ';
+  let trimWord = word.trim().toUpperCase();
+  console.log(trimWord);
+
+  // pattern-3
+  // 書式：オブジェクト.メソッド1.プロパティ.メソッド2;
+  // 意味：オブジェクトのメソッド1を実行し、その結果のプロパティに対してメソッド2を実行する
+  const trimText = document.querySelector('.paragraph').textContent.trim();
+  console.log(trimText);
+
+  // 等
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // プロパティの使い方 例
+  ////////////////////////////////////////////////////////////////////////////////
+
+  // pattern-1
+  // 書式：オブジェクト.メソッド.プロパティ
+  // 意味：オブジェクトのメソッドを実行し、プロパティを取得する
+  const selectElement = document.querySelector('.option_class1').textContent;
+  console.log(selectElement);
+
+  // pattern-2
+  // 書式：オブジェクト.メソッド.プロパティ1.プロパティ2
+  // 意味：オブジェクトのメソッドを実行し、プロパティ1からプロパティ2を取得する
+  document.querySelector('#form').select_name.onchange = function () {
+   console.log(document.querySelector('#form').select_name.value);
+  };
+
+  // 等
+
+ </script>
+</body>
+
+</html>
