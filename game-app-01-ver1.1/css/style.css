@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DotGothic16", sans-serif;
+  letter-spacing: 0.1em;
+  line-height: 1.7;
+}
+h1 {
+  height: 10vh;
+  font-size: 4.5vh;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 2vh auto 0.5vh;
+  background-color: #ccc;
+  border-top: 5px solid #222;
+  border-bottom: 5px solid #222;
+}
+.wrapper {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ゲーム画面の定義、borderを用意することで画面端の領域は使わないように */
+.window {
+  width: 90%;
+  height: 90%;
+  background-color: black;
+  border: 4px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+/* スコア、ライフ表示部のスタイル */
+.score {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 1;
+}
+.score p {
+  color: white;
+  font-size: 15px;
+}
+.score .life {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: start;
+}
+/* 灰色のハート */
+.score .life .damaged {
+  height: 20px;
+  width: 20px;
+  background-image: url(../img/emptyheart.svg);
+}
+/* 赤いハート */
+.score .life .fill {
+  height: 20px;
+  width: 20px;
+  background-image: url(../img/heart.svg);
+}
+/* スコア、ライフ表示部分ここまで */
+/* メッセージ領域のスタイル */
+.message {
+  border-top: 10px double;
+  border-bottom: 10px double;
+
+  background-color: #ccc;
+  width: 100%;
+  max-height: 70%;
+  display: none;
+}
+.message .msgtitle {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.msgtitle::before,
+.msgtitle::after {
+  content: "";
+  height: 1px;
+  background-color: #222;
+  width: 5%;
+}
+.msgtitle::before {
+  margin-right: 1%;
+}
+.msgtitle::after {
+  margin-left: 1%;
+}
+.message p {
+  letter-spacing: 0.03em;
+  text-align: center;
+  font-size: 15px;
+}
+.message .msgtxt {
+  margin-bottom: 0.8em;
+}
+.message .msgtxt:last-of-type {
+  margin-bottom: 1.5em;
+}
+/* メッセージ部分ここまで */
+/* 自機のスタイル */
+.mychara {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url("../img/chara.svg") center/contain;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  transition: all 10ms;
+}
+/* 弾のスタイル */
+.shot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: url("../img/shot.svg") center / contain;
+  left: 0;
+  bottom: 0;
+  transition: all 10ms;
+}
+/* 的のスタイル */
+.target {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: no-repeat url("../img/target.svg") center/contain;
+  /* background-color: aliceblue; */
+  left: 0;
+  bottom: 0;
+  transition: all 10ms;
+}
