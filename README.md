@@ -2,6 +2,8 @@
 
 ウェーブクリア型シューティングゲーム風webアプリです
 
+http://mercy2g.starfree.jp/resources/game-app-01-ver1.1/index.html
+
 ## 使用技術
 
 html javascript
